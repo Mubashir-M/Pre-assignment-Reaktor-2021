@@ -1,0 +1,12 @@
+.app {
+  text-align:center;
+  display: flex;
+  align-items: center;
+}
+
+.app__left {
+  flex: 0.3;
+}
+.app__right {
+  flex: 0.7;
+}

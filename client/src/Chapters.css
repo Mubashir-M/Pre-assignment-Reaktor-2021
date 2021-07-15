@@ -1,0 +1,67 @@
+.chapters {
+  background-color: rgb(112, 23, 163);
+  color: white;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+.chapters > h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+.chapters__list{
+  text-align: left;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chapters__list > a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  
+}
+
+.chapters__list > a:hover {
+  color: bisque;
+
+
+}
+.chapters {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll; 
+}
+
+.chapters::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+
+
+.chapters > input {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  float: center;
+  font-size: 15px;
+  text-align: left;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid white;
+  outline: none;
+  color: white;
+}
+
+.chapters > input::placeholder {
+  color: white;
+}
+
+.chapters__heading {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: 600;
+}

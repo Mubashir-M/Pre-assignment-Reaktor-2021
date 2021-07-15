@@ -1,0 +1,14 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  overflow: scroll;
+  flex: 1;
+  
+}
+
+
+.results__body > h1 {
+  color: blueviolet;
+}

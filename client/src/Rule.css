@@ -1,0 +1,11 @@
+.rule__single > h2 {
+  color: blueviolet;
+  text-align: left;
+  padding: 0 50px 0 50px;
+}
+
+
+.rule__single > p {
+  text-align: left;
+  padding: 0 40px 0 40px;
+}
