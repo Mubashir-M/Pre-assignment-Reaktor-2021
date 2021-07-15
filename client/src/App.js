@@ -43,7 +43,7 @@ function App() {
       
         let index2 = 0;
         while (!text?.[index].includes('Glossary')){
-          // (Works corectly) Adds rules to their corresponding chapthers in the rulesArray
+         
           if (text[index] !== '\r') {
           
             let line = text[index].slice(0,3).trim();
@@ -53,7 +53,7 @@ function App() {
             } else {
               if (index2 < 141) index2++;
   
-              //set[index2].rules.push(text[index]);
+         
             }
 
           }
