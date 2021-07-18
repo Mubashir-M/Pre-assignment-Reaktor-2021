@@ -1,4 +1,4 @@
-.results {
+.rules {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -9,6 +9,8 @@
 }
 
 
-.results__body > h1 {
+.rules__body > h1 {
   color: blueviolet;
+  font-size: 50px;
+  font-weight: 800;
 }

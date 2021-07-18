@@ -1,18 +1,18 @@
 import React from 'react';
-import './Result.css'
+import './Rules.css'
 import Rule from './Rule';
 
 
-function Result( { chapterArray }) {
+function Rules( { chapterArray }) {
   
  
 
   return (
-    <div className = "results">
+    <div className = "rules">
 
-      <div className="results__body">
+      <div className="rules__body">
         <h1>Rules</h1>
-        <div className="results__list">
+        <div className="rules__list">
           { chapterArray && chapterArray.map((chapter, index) => {
             return <Rule key = {index} chapter = {chapter} />
           })} 
@@ -23,4 +23,4 @@ function Result( { chapterArray }) {
   );
 }
 
-export default Result;
+export default Rules;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import Chapters from './Chapters';
-import Result from './Result';
+import Rules from './Rules';
 
 function App() {
   
@@ -30,13 +30,12 @@ function App() {
         }
         index++;
         while (!text?.[index].includes('Glossary')){
-          //console.log(text[index]);
           if (text[index] !== '\r') set.push({ chapter: text[index], chapterNum: text[index].slice(0,3).trim() , rules: []});
           index++;
         }
        
         
-        while (!text[index].includes('Credits')){
+        while (!text[index].includes('1. Game Concepts')){
           index++;
         }
         index++;
@@ -47,13 +46,12 @@ function App() {
           if (text[index] !== '\r') {
           
             let line = text[index].slice(0,3).trim();
+            if (index2 === 24) console.log(text[index])
 
-            if (index2 < 141 && line !==   set[index2+1].chapterNum) {
+            if (index2 < 141 && line !==  set[index2+1].chapterNum) {
               set[index2].rules.push(text[index]);
             } else {
               if (index2 < 141) index2++;
-  
-         
             }
 
           }
@@ -74,14 +72,14 @@ function App() {
 
   },[text])
   
-
+  console.log(rulesArray)
   return (
     <div className="app">
       <div className="app__left">
         <Chapters chapterList = {rulesArray}/>
       </div>
       <div className="app__right">
-        <Result chapterArray = {rulesArray} />
+        <Rules chapterArray = {rulesArray} />
       </div>
       
       
