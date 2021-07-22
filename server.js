@@ -8,6 +8,7 @@ app.use(cors({
   origin: '*'
 }));
 
+
 app.get('/*', (req, res) => {
   let endpoint = process.env.API_BASE_URL
   axios.get(endpoint)
@@ -18,4 +19,4 @@ app.get('/*', (req, res) => {
       res.json(error)
     })
 })
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
