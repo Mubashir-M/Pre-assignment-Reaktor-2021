@@ -9,9 +9,9 @@ app.use(cors({
   origin: '*'
 }));
 
+app.use(express.static('build'));
 
-
-app.get('/*', (req, res) => {
+app.get('/', (req, res) => {
   let endpoint = process.env.API_BASE_URL
   axios.get(endpoint)
     .then(response => {
