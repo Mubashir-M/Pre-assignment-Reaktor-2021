@@ -11,7 +11,7 @@ app.use(cors({
 
 app.use(express.static('build'));
 
-app.get('/', (req, res) => {
+app.get('/rules', (req, res) => {
   let endpoint = process.env.API_BASE_URL
   axios.get(endpoint)
     .then(response => {
