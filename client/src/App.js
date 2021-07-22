@@ -15,7 +15,6 @@ function App() {
       response = await response.json();
       setText(response.split("\n"));
     }
-
     fetchRules();
   },[])
 
@@ -23,8 +22,10 @@ function App() {
     const iterateLines = () => {
       const set = [];
       let index = 0;
+      
      
       if (text[index]){
+        // Adding table of contents to the set as chapters
         while (!text[index].includes('Contents')){
           index++;
         }
@@ -33,46 +34,41 @@ function App() {
           if (text[index] !== '\r') set.push({ chapter: text[index], chapterNum: text[index].slice(0,3).trim() , rules: []});
           index++;
         }
-       
-        
-        while (!text[index].includes('1. Game Concepts')){
+       while (!text[index].includes('1. Game Concepts')){
           index++;
         }
+
+        // Adding extra chapter to the end as set_Index+1 below could be out of bounds.
+        set.push({ chapter: "End", chapterNum: null , rules: []});
         index++;
-      
-        let index2 = 0;
+        let set_Index = 0;
+        const length = set.length-1;
+
+        // Traversing chapters in set and adding rules to corresponding chapters.
         while (!text?.[index].includes('Glossary')){
-         
           if (text[index] !== '\r') {
-          
             let line = text[index].slice(0,3).trim();
-            if (index2 === 24) console.log(text[index])
-
-            if (index2 < 141 && line !==  set[index2+1].chapterNum) {
-              set[index2].rules.push(text[index]);
+            
+            if (set_Index < length && line !==  set[set_Index+1].chapterNum) {
+              set[set_Index].rules.push(text[index]);
             } else {
-              if (index2 < 141) index2++;
+              if (set_Index < length) set_Index++;
             }
-
           }
-
           index++;
         }
-        
-  
+        // Popping out the extra.
+        set.pop();
         setRulesArray(set);
       }
       
-    
-    
     }
    
     iterateLines();
    
-
   },[text])
   
-  console.log(rulesArray)
+console.log(rulesArray);
   return (
     <div className="app">
       <div className="app__left">
