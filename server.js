@@ -14,6 +14,16 @@ if (process.env.NODE_ENV === "production"){
   app.get('*', (req,res) => {
     req.sendFile(path.resolve(__dirname,'build', 'index.html'));
   })
+  app.get('/*', (req, res) => {
+    let endpoint = process.env.API_BASE_URL
+    axios.get(endpoint)
+      .then(response => {
+        res.json(response.data)
+      })
+      .catch(error => {
+        res.json(error)
+      })
+  })
 }
 
 app.get('/*', (req, res) => {
