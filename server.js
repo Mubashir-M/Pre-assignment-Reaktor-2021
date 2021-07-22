@@ -9,6 +9,8 @@ app.use(cors({
 }));
 
 
+
+
 app.get('/*', (req, res) => {
   let endpoint = process.env.API_BASE_URL
   axios.get(endpoint)
