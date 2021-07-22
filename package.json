@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "startApp": "concurrently \"node server.js\" \"cd ./client/ && npm start\"",
+    "dev": "concurrently \"node server.js\" \"cd ./client/ && npm start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mubashir",
@@ -16,5 +16,8 @@
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
