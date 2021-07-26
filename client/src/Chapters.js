@@ -18,6 +18,7 @@ function Chapters({ chapterList }) {
     );
     dispatch(searchEmpty());
   }
+  
   return (
     <div className = "chapters">
       <h1>Chapters</h1>

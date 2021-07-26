@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     const fetchRules = async() => {
-      let response = await fetch('http://localhost:3000/');
+      let response = await fetch('http://localhost:3000/rules');
       response = await response.json();
       setText(response.split("\n"));
     }
@@ -57,18 +57,17 @@ function App() {
           }
           index++;
         }
-        // Popping out the extra.
+        // Popping out the extra chapter.
         set.pop();
         setRulesArray(set);
       }
-      
     }
    
     iterateLines();
    
   },[text])
   
-console.log(rulesArray);
+
   return (
     <div className="app">
       <div className="app__left">
