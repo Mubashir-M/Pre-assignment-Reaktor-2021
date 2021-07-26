@@ -8,7 +8,7 @@
 * [Setup](#setup)
 
 ## General info
-This project is an assignment bried for junior developer, fall 2021. The application displays the rules fetched from txt file in a simple UI.
+This project is an assignment brief for junior developer, fall 2021. The application displays the rules fetched from txt file in a simple UI.
 	
 ## Technologies
 Project is created with:
